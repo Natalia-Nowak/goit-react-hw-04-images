@@ -1,0 +1,19 @@
+.button-block {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.button-load {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #f0f0f0;
+  background-color: #466171;
+  border: 0.2px solid #dedede;
+  border-radius: 5px;
+}
+
+.button-load:hover {
+  color: #ffffff;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.25);
+}
