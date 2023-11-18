@@ -11,10 +11,10 @@ export const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [totalHits, setTotalHits] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(12);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [urlModal, setUrlModal] = useState('');
+  const perPage = 12;
 
   const apiKey = '31724957-a5b65aed33845330804f8a3d2';
 
@@ -27,6 +27,7 @@ export const App = () => {
       );
       setHits(response.data.hits);
       setTotalHits(response.data.totalHits);
+      setLoading(false);
     };
     fetchData();
   }, []);
