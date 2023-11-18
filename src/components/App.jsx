@@ -18,17 +18,18 @@ export const App = () => {
 
   const apiKey = '31724957-a5b65aed33845330804f8a3d2';
 
-  useEffect(() => {
+  const fetchData = async () => {
     setLoading(true);
 
-    const fetchData = async () => {
-      const response = await axios.get(
-        `https://pixabay.com/api/?q=${searchQuery}&page=${currentPage}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=${perPage}`
-      );
-      setHits(response.data.hits);
-      setTotalHits(response.data.totalHits);
-      setLoading(false);
-    };
+    const response = await axios.get(
+      `https://pixabay.com/api/?q=${searchQuery}&page=${currentPage}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=${perPage}`
+    );
+    setHits(response.data.hits);
+    setTotalHits(response.data.totalHits);
+    setLoading(false);
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
 
